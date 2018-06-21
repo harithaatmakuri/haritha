@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prime or not</title>
+    <script>
+        function toFindPrime(){
+            var num=document.getElementById('num').value;
+            var c=0;
+                for(i=1;i<=num;i++){
+                    if(num%i==0){
+                        c++;
+                        }
+            }
+                    if(c==2){
+                                alert(num+"is a prime number");
+                            }
+                    else{
+                        alert(num+"is not a prime number");
+                        }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter a number:<input type="text" id="num" >
+       <button onclick="toFindPrime()">prime or not</button>
+    </form>
+
+</body>
+</html>

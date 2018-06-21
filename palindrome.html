@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>Palindrome and string reverse</title>
+<head>
+</head>
+<body>
+<input type="text" id="inputstring">
+<button onclick="palindrome()">Palindrome or not</button>
+<button onclick="stringReverse()"> String Reverse</button>
+<script>
+    function palindrome(){
+
+        var num= document.getElementById('inputstring').value;;
+        if (num == num.split('').reverse().join(''))
+        {
+            alert(num + ' is a palindrome.');
+        }
+        else
+        {
+            alert(num + ' is not a palindrome.');
+        }
+    }
+    function stringReverse() {
+        var string = document.getElementById('inputstring').value;
+        var reverse= string.split('').reverse().join('');
+        document.getElementById('inputstring').value = reverse;
+    }
+</script>
+
+</body>
+</html>

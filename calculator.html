@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+<input type="text" id="number">
+<table border="1px solid">
+<tr>
+    <td>
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button onclick="insert('+')">+</button>
+
+    </td>
+</tr>
+<tr>
+    <td>
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button onclick="insert('-')">-</button>
+    </td>
+<tr>
+    <td>
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button onclick="insert('*')">*</button>
+    </td>
+</tr>
+<tr>
+    <td >
+        <button onclick="insert('.')">.</button>
+        <button onclick="insert('^')">^</button>
+        <button onclick="result()">result</button></td>
+</tr>
+    <tr>
+        <td>
+            <button type="button"  onclick = "insert('/')">/</button>
+            <button type="button" onclick = "insert('%')">%</button>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button"  onclick = "roundoff()">Roundoff</button>
+            <button type="button" onclick = "ceil()">Ceil</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button"  onclick = "power()">power</button>
+            <button type="button" onclick = "sqrt()">Square root</button>
+
+        </td>
+    </tr>
+</table>
+<script>
+    function insert(num1){
+        var num = document.getElementById('number').value;
+        document.getElementById('number').value = num+num1;
+    }
+
+    function power(){
+        var num = document.getElementById('number').value;
+        var value = num.split('^');
+        document.getElementById('number').value = Math.pow(value[0],value[1]);
+    }
+    function sqrt(){
+        var num = document.getElementById('number').value;
+        document.getElementById('number').value = Math.sqrt(num);
+    }
+    function ceil(){
+        var num = document.getElementById('number').value;
+        document.getElementById('number').value = Math.ceil(num);
+    }
+    function roundoff(){
+        var num = document.getElementById('number').value;
+        document.getElementById('number').value = Math.round(num);
+    }
+    function result(){
+        var exp=document.getElementById('number').value;
+        if(exp){
+            document.getElementById('number').value=eval(exp)
+        }
+    }
+
+
+</script>
+</body>
+</html>
